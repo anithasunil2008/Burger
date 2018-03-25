@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var methodOverride = require('method-override')
+var methodOverride = require('method-override');
+var exphbs = require('express-handlebars');
 
 var app = express();
 
@@ -12,7 +13,7 @@ app.use(bodyParser.urlencoded({
     }))
     // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'))
-var exphbs = require('express-handlebars');
+
 app.engine('handlebars', exphbs({
     defaultLayout: 'main',
 }));
