@@ -8,9 +8,9 @@ var app = express();
 app.use(express.static(process.cwd() + '/public'));
 
 app.use(bodyParser.urlencoded({
-	extended: false
-}))
-// override with POST having ?_method=DELETE
+        extended: false
+    }))
+    // override with POST having ?_method=DELETE
 app.use(methodOverride('_method'))
 var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
@@ -23,3 +23,5 @@ app.use('/', routes);
 
 var port = process.env.PORT || 3000;
 app.listen(port);
+
+console.log("Server is listening to port " + port);
